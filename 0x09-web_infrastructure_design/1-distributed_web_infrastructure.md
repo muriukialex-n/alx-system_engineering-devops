@@ -1,8 +1,6 @@
 ![image](https://github.com/muriukialex-n/alx-system_engineering-devops/assets/125402751/e1c2825f-2316-4566-bb26-c9f323d08184)
 # Distributed Web Infrastructure
 
-![Image of a distributed web infrastructure](1-distributed_web_infrastructure.PNG)
-
 [Visit Board](https://miro.com/app/board/uXjVOfI6jcU=/)
 
 ## Description
