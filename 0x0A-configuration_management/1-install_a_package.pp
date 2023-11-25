@@ -1,12 +1,6 @@
-# 1-install_a_package.pp
-
-package { 'python3-pip':
-  ensure => 'installed',
-}
-
+# Installs flask from pip3
 package { 'Flask':
   ensure   => '2.1.0',
-  provider => 'pip',
-  require  => Package['python3-pip'],
+  provider => 'pip3'
 }
 
