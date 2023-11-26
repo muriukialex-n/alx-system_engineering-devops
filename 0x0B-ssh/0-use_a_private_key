@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# Uses ssh to connect to server with private key and user given
-ssh ubuntu@54.236.49.78 -i ~/.ssh/holberton
+# This script connects to the server using the private key ~/.ssh/school with the user ubuntu.
+
+# Using ssh with the private key
+ssh -i ~/.ssh/school ubuntu@54.236.49.78
 
