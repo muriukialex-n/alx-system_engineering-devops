@@ -1,6 +1,6 @@
 # Simple Web Stack
 
-![image](https://github.com/muriukialex-n/alx-system_engineering-devops/assets/125402751/dc4b73da-dac1-4e08-a324-8bafe15fc112)
+![image](https://imgur.com/qIEWD6E)
 
 
 
