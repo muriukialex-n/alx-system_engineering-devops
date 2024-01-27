@@ -1,35 +1,43 @@
 #!/usr/bin/python3
-"""
-0-subs
-"""
+"""Function that queries the Reddit API"""
+
 import requests
 
 
 def number_of_subscribers(subreddit):
     """
-    Returns the number of subscribers for a given subreddit.
-    If the subreddit is invalid, returns 0.
-    """
-    url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+    Args:
+        subreddit: subreddit name
 
-    try:
-        response = requests.get(url, headers=headers, allow_redirects=False)
-        if response.status_code == 200:
-            data = response.json()
-            return data['data']['subscribers']
-        else:
-            return 0
-    except Exception as e:
+    Returns:
+        Number of subscribers to the subreddit,
+        or 0 if the subreddit requested is invalid
+    """
+    # Set the User-Agent header to avoid issues with Too Many Requests
+    headers = {'User-Agent': 'xica369'}
+
+    # Construct the URL for the subreddit's information
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+
+    # Send a GET request to the Reddit API
+    response = requests.get(url, headers=headers, allow_redirects=False)
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the JSON response and extract the number of subscribers
+        return response.json().get("data").get("subscribers")
+    else:
+        # Return 0 if the subreddit is invalid or if there's an issue with the request
         return 0
 
 
 if __name__ == "__main__":
     import sys
 
+    # Check if the script is executed with the required command-line argument
     if len(sys.argv) < 2:
         print("Please pass an argument for the subreddit to search.")
     else:
+        # Call the function and print the result
         subscribers_count = number_of_subscribers(sys.argv[1])
-        print("{:d}".format(subscribers_count))
+        print(subscribers_count)
